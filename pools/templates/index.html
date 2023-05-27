@@ -2,135 +2,94 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doll Shop</title>
+  <link rel="stylesheet" href="{% static 'pools/css/styles.css' %}">
+  <link type="image/png" sizes="32x32" rel="icon" href="{% static 'pools/img/favicon.svg' %}">
+  <style>
+    /* CSS for the navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .basket-icon {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+    }
+  </style>
+  <script>
+    function AddToBasket() {
+      // Get the item name and image source
+      const itemName = "Item 1";
+      const itemImageSrc = "{% static 'pools/img/item1.png' %}";
+
+      // Create a new basket item element
+      const basketItem = document.createElement("div");
+      basketItem.className = "basket-item";
+
+      // Create an image element for the item
+      const itemImage = document.createElement("img");
+      itemImage.src = itemImageSrc;
+
+      // Append the image to the basket item
+      basketItem.appendChild(itemImage);
+
+      // Get the basket element
+      const basket = document.getElementById("basket");
+
+      // Append the basket item to the basket
+      basket.appendChild(basketItem);
+    }
+  </script>
 </head>
-
-<header>
-    <div class="header">
-        <div class="logo">
-            <a href="/">
-                <img src="{% static 'pools/img/GitHub-Logo.wine.svg' %}" width="100px" height="100px"/>
-            </a>
-        </div>
-    </div>
-
-
-        <div class="menu">
-            <ul>
-                <li><a href="/coockies">Печеньки</a> </li>
-                <li><a href="/candies">Конфетки</a> </li>
-                <li><a href="/lollipop">Леденцы</a> </li>
-                <li><a href="/gum">Жвачки</a> </li>
-                <li><a href="/how_to_eat">Как правильно есть сладости?</a> </li>
-            </ul>
-        </div>
-</header>
-
 <body>
-        <div>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" class="button">на меня</a>
-        </div>
+  <header>
+    <h1>Welcome to Doll Shop!</h1>
+    <nav>
+      <ul>
+        <li><a href="../home/">Home</a></li>
+        <li><a href="../about/">About Us</a></li>
+        <li><a href="../contacts/">Contact</a></li>
+      </ul>
+      <ul>
+        <li><a href="../basket/">Basket</a><img class="basket-icon" src="{% static 'pools/img/basket.svg' %}" alt="Basket"></li>
+      </ul>
+    </nav>
+  </header>
 
+  <section class="hero">
+    <h2>Find Your Perfect Doll</h2>
+    <a href="../home/" class="cta-button">Shop Now</a>
+  </section>
+
+  <section class="featured-dolls">
+    <h3>Featured Dolls</h3>
+    <div class="doll-card">
+      <img src="{% static 'pools/img/wednesday.jpg' %}" style="width: 200px; height: 250px;" alt="Doll 1">
+      <h4>Doll 1</h4>
+      <p>Price: $19.99</p>
+      <a href="/" class="buy-button">Buy Now</a>
+    </div>
+    <div class="doll-card">
+      <img src="{% static 'pools/img/blonde.jpg' %}" style="width: 200px; height: 250px;" alt="Doll 2">
+      <h4>Doll 2</h4>
+      <p>Price: $24.99</p>
+      <a href="/" class="buy-button">Buy Now</a>
+    </div>
+    <div class="doll-card">
+      <img src="{% static 'pools/img/red.jpg' %}" style="width: 200px; height: 250px;" alt="Doll 3"/>
+      <h4>Doll 3</h4>
+      <p>Price: $29.99</p>
+      <a href="/" class="buy-button">Buy Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Doll Shop. All rights reserved.</p>
+  </footer>
 </body>
-
-<footer>
-
-</footer>
 </html>
-
-
-<style>
-    .header{
-        background-color: MediumOrchid;
-        }
-
-    .body.content{
-            background-color: black;
-            height: 100%;
-            width: 100%;
-        }
-
-    a.button {
-      width: 150px;
-      height: 30px;
-      text-decoration: none;
-      padding-top: 9px;
-      color: #a675b3;
-      text-align: center;
-      line-height: 20px;
-      display: block;
-      margin: 20px auto;
-      font: normal 17px arial;
-    }
-
-    a.button:not(.active) {
-      box-shadow: inset 0 1px 1px rgba(111, 55, 125, 0.8), inset 0 -1px 0px rgba(63, 59, 113, 0.2), 0 9px 16px 0 rgba(0, 0, 0, 0.3), 0 4px 3px 0 rgba(0, 0, 0, 0.3), 0 0 0 1px #150a1e;
-      background-image: linear-gradient(#3b2751, #271739);
-      text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 -1px 0 #311d47;
-    }
-
-    a.button:not(.active):hover,
-    a.button:not(.active):focus {
-      transition: color 200ms linear, text-shadow 500ms linear;
-      color: #fff;
-      text-shadow: 0 0 21px rgba(223, 206, 228, 0.5), 0 0 10px rgba(223, 206, 228, 0.4), 0 0 2px #2a153c;
-    }
-
-    a.button:not(:hover) {
-        transition: 0.6s;
-    }
-
-    header {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .menu{
-        flex-grow: 1;
-        background-color: MediumOrchid;
-        width: 150px;
-        height: 104px;
-
-    }
-
-    .menu li{
-        margin-right: 20px;
-    }
-
-    .menu ul{
-        display: flex;
-        flex-flow: row nowrap;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        font-size: 16px;
-        line-height: 18px;
-    }
-
-    .menu .active{
-        display: block;
-        padding: 8px 10px;
-        text-transform: uppercase;
-        letter-spacing: .27em;
-    }
-
-    .menu a{
-        padding: 8px 10px;
-        color: black;
-        text-decoration: none;
-    }
-
-    .logo{
-        margin-right: 30px;
-    }
-
-    .tel{
-        font-size: 20px;
-        line-height: 24px;
-        color: black;
-        text-decoration: none;
-    }
-</style>

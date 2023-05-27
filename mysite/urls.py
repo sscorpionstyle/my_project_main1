@@ -16,15 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from pools.controllers import index
+from pools.controllers import feedback
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index.index),
-    path('about/', index.about),
     path('about/work', index.aboutWork),
-    path('coockies/', index.aboutCoockies),
-    path('candies/', index.aboutCandies),
-    path('lollipop/', index.aboutLollipop),
-    path('gum/', index.aboutGum),
-    path('how_to_eat/', index.aboutEating),
+    path('home/', index.aboutHome),
+    path('about/', index.aboutAbout),
+    path('contacts/', index.aboutContact),
+    path('basket/', index.aboutBasket),
+    path('contacts/feedback/', feedback.create),
 ]

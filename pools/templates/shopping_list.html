@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doll Shop</title>
+  <link rel="stylesheet" href="{% static 'pools/css/styles.css' %}">
+  <link type="image/png" sizes="32x32" rel="icon" href="{% static 'pools/img/favicon.svg' %}">
+  <style>
+    /* CSS for the navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .basket-icon {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+    }
+    /* CSS for the shopping list */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: center; /* Center the items */ }
+    li {
+      margin-bottom: 10px; }
+
+    h3{
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+      position: fixed;
+      left: 575px;
+      top: 310px;
+    }
+    footer{
+      position: fixed;
+      top: 520px;
+      left: 500px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Doll Shop!</h1>
+    <nav>
+      <ul>
+        <li><a href="../home/">Home</a></li>
+        <li><a href="../about/">About Us</a></li>
+        <li><a href="../contacts/">Contact</a></li>
+      </ul>
+      <ul>
+        <li><a href="../basket/">Basket</a><img class="basket-icon" src="{% static 'pools/img/basket.svg' %}" alt="Basket"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Want more?</h2>
+    <a href="../home/" class="cta-button">Shop Now</a>
+  </section>
+
+  <h3>Shopping List</h3>
+     <div id = "basket">
+
+     </div>
+    <!-- Add more items as needed -->
+
+  <footer>
+    <p >&copy; 2023 Doll Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

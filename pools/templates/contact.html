@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doll Shop</title>
+  <link rel="stylesheet" href="{% static 'pools/css/styles.css' %}">
+  <link type="image/png" sizes="32x32" rel="icon" href="{% static 'pools/img/favicon.svg' %}">
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer{
+      position: fixed;
+      top: 520px;
+      left: 500px;
+    }
+
+
+    .basket-icon {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Doll Shop!</h1>
+    <nav>
+      <ul>
+        <li><a href="../home/">Home</a></li>
+        <li><a href="../about/">About Us</a></li>
+        <li><a href="../contacts/">Contact</a></li>
+      </ul>
+      <ul>
+        <li><a href="../basket/">Basket</a><img class="basket-icon" src="{% static 'pools/img/basket.svg' %}" alt="Basket"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Find Your Perfect Doll</h2>
+    <a href="../home/" class="cta-button">Shop Now</a>
+  </section>
+
+  <section class="featured-dolls">
+    <h4 style="white-space:pre;">The "Contacts" page on our website for the sale of dolls is the place where
+      you can find all the necessary contact details to contact us. Here you will find our address,
+      phone number and email, as well as a feedback form through which you can ask any questions
+      or leave feedback about our work. We are always ready to help you and answer all your questions,
+      related to the purchase of dolls on our website. Do not hesitate to contact us!
+
+
+      Contacts:
+
+      +7(985)116-79-33
+
+      sscorpionstyle@mail.ru
+    </h4>
+
+  </section>
+
+<section class="contact section " id="contact">
+      <div class="container flex-center">
+        <div class="content">
+
+          <div class="contact-rigth">
+            <form action="feedback/" method="post" class="contact-form">
+              {% csrf_token %}
+              <div class="third-row">
+                <input name="email" type="email" placeholder="Email">
+                <textarea name="message" id="" rows="7" placeholder="Message"></textarea>
+              </div>
+              <button href="feedback.html" class="btn" type="submit">Send Message </button>
+            </form>
+          </div>
+        </div>
+      </div>
+</section>
+
+  <footer>
+    <p>&copy; 2023 Doll Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

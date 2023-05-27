@@ -1,6 +1,63 @@
-{% extends 'template.html' %}
-{% block body %}
-<div class="content">
-    <h1> smth2</h1>
-</div>
-{% endblock %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doll Shop</title>
+  <link rel="stylesheet" href="{% static 'pools/css/styles.css' %}">
+  <link type="image/png" sizes="32x32" rel="icon" href="{% static 'pools/img/favicon.svg' %}">
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .basket-icon {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+    }
+  </style>
+
+</head>
+<body>
+  <header>
+    <h1>Welcome to Doll Shop!</h1>
+    <nav>
+      <ul>
+        <li><a href="http://127.0.0.1:8000/home/">Home</a></li>
+        <li><a href="http://127.0.0.1:8000/about/">About Us</a></li>
+        <li><a href="http://127.0.0.1:8000/contacts/">Contact</a></li>
+      </ul>
+      <ul>
+        <li><a href="http://127.0.0.1:8000/basket/">Basket</a><img class="basket-icon" src="{% static 'pools/img/basket.svg' %}" alt="Basket"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Find Your Perfect Doll</h2>
+    <a href="http://127.0.0.1:8000/home/" class="cta-button">Shop Now</a>
+  </section>
+
+  <section class="featured-dolls">
+    <h4 style="white-space:pre;">About us
+
+      We are a team of enthusiasts who love dolls and everything related to them.
+      We offer a wide range of dolls of various brands and manufacturers to meet the needs of
+      our customers. We strive to provide our customers with the best service and quality products. We are proud of,
+      that our team consists of experts in the field of dolls, who are always ready to help you with the choice and answer
+      for any questions. We are constantly working to improve our product range and service so that our customers can
+      enjoy shopping for dolls on our website. We hope that you will find what you are looking for here and enjoy
+      shopping on our website.
+      Thank you for choosing our company!</h4>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Doll Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>
