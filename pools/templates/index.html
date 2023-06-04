@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,31 +22,8 @@
       margin-left: 5px;
     }
   </style>
-  <script>
-    function AddToBasket() {
-      // Get the item name and image source
-      const itemName = "Item 1";
-      const itemImageSrc = "{% static 'pools/img/item1.png' %}";
-
-      // Create a new basket item element
-      const basketItem = document.createElement("div");
-      basketItem.className = "basket-item";
-
-      // Create an image element for the item
-      const itemImage = document.createElement("img");
-      itemImage.src = itemImageSrc;
-
-      // Append the image to the basket item
-      basketItem.appendChild(itemImage);
-
-      // Get the basket element
-      const basket = document.getElementById("basket");
-
-      // Append the basket item to the basket
-      basket.appendChild(basketItem);
-    }
-  </script>
 </head>
+
 <body>
   <header>
     <h1>Welcome to Doll Shop!</h1>
@@ -88,8 +66,21 @@
     </div>
   </section>
 
+  <section class="items-list">
+    <h3>Items List</h3>
+    {% for item in items %}
+        <div class="doll-card">
+            <img src="{{ item.image.url }}">
+            <h4>{{ item.name }}</h4>
+            <p>Price: {{ item.price }}</p>
+            <a href="/" class="buy-button">Buy Now</a>
+        </div>
+    {% endfor %}
+  </section>
+
   <footer>
     <p>&copy; 2023 Doll Shop. All rights reserved.</p>
   </footer>
 </body>
+
 </html>

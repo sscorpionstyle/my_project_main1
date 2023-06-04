@@ -1,10 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from pools.models import Feedback
+from pools.models import Items  # new
 
 
 def index(request):
-    return render(request, "index.html", {})
+    items = Items.objects.all()
+    return render(request, 'index.html', {'items': items})  # new end
+
 
 
 def aboutAbout(request):
@@ -18,10 +21,10 @@ def aboutHome(request):
 def aboutContact(request):
     return render(request, "contact.html", {})
 
+
 def aboutBasket(request):
     return render(request, "shopping_list.html", {})
 
+
 def aboutWork(request):
     return HttpResponse("Student")
-
-
