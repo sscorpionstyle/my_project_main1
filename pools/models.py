@@ -9,6 +9,6 @@ class Feedback(models.Model):
 
 
 class Items(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to="images/%Y/%m/%d", blank=True)
     name = models.CharField(max_length=30)
-    price = models.IntegerField()
+    price = models.CharField()

@@ -29,7 +29,7 @@
     <h1>Welcome to Doll Shop!</h1>
     <nav>
       <ul>
-        <li><a href="../home/">Home</a></li>
+        <li><a href="../">Home</a></li>
         <li><a href="../about/">About Us</a></li>
         <li><a href="../contacts/">Contact</a></li>
       </ul>
@@ -41,36 +41,15 @@
 
   <section class="hero">
     <h2>Find Your Perfect Doll</h2>
-    <a href="../home/" class="cta-button">Shop Now</a>
+    <a href="../" class="cta-button">Shop Now</a>
   </section>
+
 
   <section class="featured-dolls">
-    <h3>Featured Dolls</h3>
-    <div class="doll-card">
-      <img src="{% static 'pools/img/wednesday.jpg' %}" style="width: 200px; height: 250px;" alt="Doll 1">
-      <h4>Doll 1</h4>
-      <p>Price: $19.99</p>
-      <a href="/" class="buy-button">Buy Now</a>
-    </div>
-    <div class="doll-card">
-      <img src="{% static 'pools/img/blonde.jpg' %}" style="width: 200px; height: 250px;" alt="Doll 2">
-      <h4>Doll 2</h4>
-      <p>Price: $24.99</p>
-      <a href="/" class="buy-button">Buy Now</a>
-    </div>
-    <div class="doll-card">
-      <img src="{% static 'pools/img/red.jpg' %}" style="width: 200px; height: 250px;" alt="Doll 3"/>
-      <h4>Doll 3</h4>
-      <p>Price: $29.99</p>
-      <a href="/" class="buy-button">Buy Now</a>
-    </div>
-  </section>
-
-  <section class="items-list">
-    <h3>Items List</h3>
+    <h3>Featured dolls</h3>
     {% for item in items %}
         <div class="doll-card">
-            <img src="{{ item.image.url }}">
+            <img src= "{{ item.image.url }}" style="width: 200px; height: 250px;">
             <h4>{{ item.name }}</h4>
             <p>Price: {{ item.price }}</p>
             <a href="/" class="buy-button">Buy Now</a>

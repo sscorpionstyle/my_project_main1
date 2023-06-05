@@ -9,13 +9,8 @@ def index(request):
     return render(request, 'index.html', {'items': items})  # new end
 
 
-
 def aboutAbout(request):
     return render(request, "about.html", {})
-
-
-def aboutHome(request):
-    return render(request, "index.html", {})
 
 
 def aboutContact(request):
@@ -26,5 +21,3 @@ def aboutBasket(request):
     return render(request, "shopping_list.html", {})
 
 
-def aboutWork(request):
-    return HttpResponse("Student")
