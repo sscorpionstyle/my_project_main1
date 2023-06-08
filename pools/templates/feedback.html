@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
   <link rel="stylesheet" href="{% static 'pools/css/styles.css' %}">
   <link type="image/png" sizes="32x32" rel="icon" href="{% static 'pools/img/favicon.svg' %}">
   <style>
-    /* CSS for the navigation */
     nav {
       display: flex;
       justify-content: space-between;
@@ -22,8 +20,8 @@
       margin-left: 5px;
     }
   </style>
-</head>
 
+</head>
 <body>
   <header>
     <h1>Welcome to Doll Shop!</h1>
@@ -45,22 +43,18 @@
     <a href="../" class="cta-button">Shop Now</a>
   </section>
 
-
-  <section class="featured-dolls">
-    <h3>Featured dolls</h3>
-    {% for item in items %}
-        <div class="doll-card">
-            <img src= "{{ item.image.url }}" style="width: 200px; height: 250px;">
-            <h4>{{ item.name }}</h4>
-            <p>Price: {{ item.price }}</p>
-            <a href="/" class="buy-button">Buy Now</a>
-        </div>
-    {% endfor %}
-  </section>
+    <section class="featured-dolls">
+      <h3>Our feedbacks</h3>
+      {% for feedback in feedback %}
+          <div class="doll-card" >
+              <h4 >{{ feedback.email }}</h4>
+              <p style="width: 200px;" >{{ feedback.text }}</p>
+          </div>
+      {% endfor %}
+    </section>
 
   <footer>
     <p>&copy; 2023 Doll Shop. All rights reserved.</p>
   </footer>
 </body>
-
 </html>
